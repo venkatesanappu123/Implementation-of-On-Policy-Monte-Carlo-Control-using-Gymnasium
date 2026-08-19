@@ -320,9 +320,9 @@ def print_policy(policy):
 
     policy_grid = np.array([action_symbols[action] for action in policy]).reshape(4, 4)
 
-    print("Name: VENKATANATHAN P R")
+    print("Name: Venkatesan R")
 
-    print("Register Number: 212223240173")
+    print("Register Number: 212224230299")
 
     print("\nLearned Policy:")
 
@@ -383,49 +383,56 @@ env.close()
 
 ### Final Q-table-1:
 
-![Final Q-table](https://github.com/user-attachments/assets/fb0c71d0-a2a1-4637-91d1-ccd996988370)
+<img width="348" height="388" alt="{57B90077-4874-4AB4-BCCC-3DAA58AF9397}" src="https://github.com/user-attachments/assets/0e755255-28d9-4f50-813e-318d5acec9cb" />
+
 
 ### Estimated State-Value Function
 
-![Estimated State-Value Function](https://github.com/user-attachments/assets/347092c2-baa0-4224-9162-5da1fb192fea)
+<img width="380" height="178" alt="{CD250B14-3D15-4D1A-A1AF-96C49FBF693E}" src="https://github.com/user-attachments/assets/5ac2fefb-b529-4397-b804-846abd95e839" />
+
 
 ### Learned Policy
 
-![Learned Policy](https://github.com/user-attachments/assets/438f34ee-da57-442f-93b9-116a6c317d65)
+<img width="269" height="119" alt="{2D2B3FD2-1563-4921-B10B-C4B9EE2D5702}" src="https://github.com/user-attachments/assets/f866e60a-3421-4e97-a9cf-f21660535cf5" />
+
 
 ### Average Reward
 
-![Average reward over last 1000 episodes](https://github.com/user-attachments/assets/3512eb4b-efbd-47b0-b078-18078cd583fe)
+<img width="468" height="38" alt="{F5C28112-739F-4FBD-BD71-3F419DD0ABC2}" src="https://github.com/user-attachments/assets/ab3e0afe-0f35-47f7-b6ab-543df2521862" />
+
 
 ### Plot Learning Curve:
 
-<img width="970" height="476" alt="image" src="https://github.com/user-attachments/assets/5304b670-33b7-4077-99a6-2d3af7d17ac5" />
+<img width="699" height="470" alt="image" src="https://github.com/user-attachments/assets/7326cd31-9bf7-4fd9-9e1c-d46c9478d8e3" />
 
-### Episodes=5000:
+
+### Episodes=4000:
 
 ### Final Q-table-2:
 
-<img width="571" height="323" alt="image" src="https://github.com/user-attachments/assets/aa45fe35-3040-4a7d-a4ff-e86accb78947" />
+<img width="389" height="385" alt="{C167E0EC-1FF5-4EB3-8C9F-EF25D6EA581D}" src="https://github.com/user-attachments/assets/090dbab1-24da-457c-9072-6d006e53fc88" />
 
 
 ### Estimated State-Value Function
 
-<img width="430" height="144" alt="image" src="https://github.com/user-attachments/assets/81f5ff00-fd64-4292-a699-3b07415b8094" />
+<img width="397" height="169" alt="{CCE21BD6-90EE-4BE1-80EC-4367C046B08E}" src="https://github.com/user-attachments/assets/59b4a625-a11c-497b-a3d0-66841e46a255" />
 
 
 ### Learned Policy
 
-<img width="595" height="112" alt="image" src="https://github.com/user-attachments/assets/7bd7f6c8-0105-4feb-8671-bb35652a650b" />
+<img width="344" height="127" alt="{81710486-DCAB-49AF-B09C-3F779257C911}" src="https://github.com/user-attachments/assets/7ac3aa87-4ae6-468c-b4de-9b695d2098fe" />
 
 
 ### Average Reward
 
-<img width="712" height="44" alt="image" src="https://github.com/user-attachments/assets/69c7472c-9627-4fc3-8a94-ec823f782731" />
+<img width="484" height="31" alt="{7D446546-402F-4053-93C0-BDC0BF60EA1A}" src="https://github.com/user-attachments/assets/abb36865-ef76-4324-a10c-bff41929b4ac" />
+
 
 
 ### Plot Learning Curve:
 
-<img width="1113" height="513" alt="image" src="https://github.com/user-attachments/assets/0a464f3d-0fa9-4fc8-be37-127c211f9aa8" />
+<img width="691" height="470" alt="image" src="https://github.com/user-attachments/assets/4bdebd52-2ac5-40f5-94e7-0f97188f2e52" />
+
 
 
 
@@ -440,15 +447,11 @@ The agent learned an improved policy using Monte Carlo returns and an epsilon-gr
 
 ## Inference
 
-The agent initially performs more exploration because the epsilon value starts at `1.0`. As the number of training episodes increases, epsilon decreases toward the minimum value of `0.05`.
-
-The Monte Carlo algorithm calculates the return from complete episodes and uses these returns to update the Q-values.
-
-The learned Q-table represents the estimated value of taking each action in every state. The state-value function is obtained by selecting the maximum Q-value for each state.
-
-The epsilon-greedy policy allows the agent to explore different actions initially and gradually exploit the actions that provide higher estimated returns.
-
-The learning curve shows the change in the average reward as the number of training episodes increases.
+At the beginning, the agent explores a lot because the epsilon value is high (1.0). Over time, epsilon gradually reduces until it reaches a minimum of 0.05, so the agent starts exploring less and exploiting more.
+The Monte Carlo method learns by observing complete episodes and calculating the total return, which is then used to update the Q-values.
+The Q-table stores the expected rewards for each action in every state. From this, the state-value can be found by choosing the highest Q-value for each state.
+The epsilon-greedy strategy helps balance exploration and exploitation—trying new actions at first, then focusing on the best actions later.
+The learning curve represents how the agent’s average reward improves (or changes) as training progresses over multiple episodes.
 
 ---
 ---
